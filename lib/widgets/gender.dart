@@ -15,7 +15,7 @@ class Gender extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 34),
               child: Icon(
                 icon,
                 color: Colors.white,
@@ -23,10 +23,11 @@ class Gender extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom:35),
+              padding: const EdgeInsets.only(bottom: 34),
               child: Text(
                 gender,
-                style: TextStyle(color: Color.fromARGB(255, 57, 58, 75), fontSize: 20),
+                style: TextStyle(
+                    color: Color.fromARGB(171, 165, 167, 190), fontSize: 20),
               ),
             )
           ],

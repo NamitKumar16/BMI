@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   String parameter;
   int value;
-  CustomButton(this.parameter, this.value);
+  Function fn;
+  CustomButton(this.parameter, this.value, this.fn);
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +15,11 @@ class CustomButton extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 25),
             child: Text(
               parameter,
               style: const TextStyle(
-                  color: Color.fromARGB(255, 57, 58, 75), fontSize: 20),
+                  color: Color.fromARGB(171, 165, 167, 190), fontSize: 20),
             ),
           ),
           Text('$value',
@@ -30,11 +31,13 @@ class CustomButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 30, top: 15),
                 child: RawMaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    fn(-1);
+                  },
                   elevation: 2.0,
-                  fillColor: Color.fromARGB(255, 76, 79, 93),
+                  fillColor: Color.fromARGB(111, 165, 167, 190),
                   child: const Icon(
                     Icons.remove,
                     color: Colors.white,
@@ -45,17 +48,19 @@ class CustomButton extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 30, top: 15),
                 child: RawMaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    fn(1);
+                  },
                   elevation: 2,
-                  fillColor: Color.fromARGB(255, 76, 79, 93),
+                  fillColor: Color.fromARGB(111, 165, 167, 190),
                   child: const Icon(
                     Icons.add,
                     size: 23.0,
                     color: Colors.white,
                   ),
-                  padding: EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(15),
                   shape: CircleBorder(),
                 ),
               )
